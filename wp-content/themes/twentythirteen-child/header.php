@@ -29,10 +29,9 @@
 	<![endif]-->
 	<?php wp_head(); ?>
 
-
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap.min.css"> -->
 	<!-- <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/bootstrap-theme.min.css"> -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/main.css">
+	<!-- <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/main.css"> -->
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 <body>
@@ -46,33 +45,38 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
+				<a class="navbar-brand" href="#">BOUNCE</a>
 			</div>
 
-			<?php
+			<div id="navbar-collapse" class="collapse navbar-collapse">
+				<?php
 
-				$args = array(
-					'theme_location'  => '',
-					'menu'            => 'Dribbble',
-					'container'       => 'div',
-					'container_class' => 'collapse navbar-collapse',
-					'container_id'    => 'navbar-collapse',
-					'menu_class'      => 'nav navbar-nav',
-					'menu_id'         => '',
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'before'          => '',
-					'after'           => '',
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'      => '<ul id="%1$s" class="%2$s"><li style="position: relative; margin-top: 11px; margin-right: 20px;"><img src="http://assets0.dribbble.com/assets/logo-small-6211913b000fc7eb5dbe90343e1ae746.png"></li>%3$s</ul>',
-					'depth'           => 1,
-					'walker'          => ''
-				);
+					// Options for navigation menu
+					$args = array(
+						'theme_location'  => '',
+						'menu'            => 'Dribbble',
+						'container'       => 'ul',
+						'container_class' => '',
+						'container_id'    => '',
+						'menu_class'      => 'nav navbar-nav',
+						'menu_id'         => '',
+						'echo'            => true,
+						'fallback_cb'     => 'wp_page_menu',
+						'before'          => '',
+						'after'           => '',
+						'link_before'     => '',
+						'link_after'      => '',
+						'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>', // <li style="position: relative; margin-top: 11px; margin-right: 20px;"><img src="http://assets0.dribbble.com/assets/logo-small-6211913b000fc7eb5dbe90343e1ae746.png"></li>
+						'depth'           => 0,
+						'walker'          => ''
+					);
 
-				wp_nav_menu($args);
+					// Render the menu
+					wp_nav_menu($args);
 
-			?>
+					// Search form
+					get_search_form();
+				?>
+			</div>
 		</div>
 	</nav>
-
-	<div id="main" class="site-main">

@@ -36,40 +36,43 @@
 	<script src="<?php echo get_stylesheet_directory_uri(); ?>js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-default navbar-inverse" role="navigation">
 		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+
+			<?php
+
+				$args = array(
+					'theme_location'  => '',
+					'menu'            => 'Dribbble',
+					'container'       => 'div',
+					'container_class' => 'collapse navbar-collapse',
+					'container_id'    => 'navbar-collapse',
+					'menu_class'      => 'nav navbar-nav',
+					'menu_id'         => '',
+					'echo'            => true,
+					'fallback_cb'     => 'wp_page_menu',
+					'before'          => '',
+					'after'           => '',
+					'link_before'     => '',
+					'link_after'      => '',
+					'items_wrap'      => '<ul id="%1$s" class="%2$s"><li style="position: relative; margin-top: 11px; margin-right: 20px;"><img src="http://assets0.dribbble.com/assets/logo-small-6211913b000fc7eb5dbe90343e1ae746.png"></li>%3$s</ul>',
+					'depth'           => 1,
+					'walker'          => ''
+				);
+
+				wp_nav_menu($args);
+
+			?>
 		</div>
-
-<?php
-
-$defaults = array(
-	'theme_location'  => '',
-	'menu'            => 'Dribbble',
-	'container'       => 'div',
-	'container_class' => 'collapse navbar-collapse',
-	'container_id'    => 'bs-example-navbar-collapse-1',
-	'menu_class'      => 'nav navbar-nav',
-	'menu_id'         => '',
-	'echo'            => true,
-	'fallback_cb'     => 'wp_page_menu',
-	'before'          => '',
-	'after'           => '',
-	'link_before'     => '',
-	'link_after'      => '',
-	'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-	'depth'           => 1,
-	'walker'          => ''
-);
-
-wp_nav_menu( $defaults );
-
-?>
-
 	</nav>
+
+	<div id="main" class="site-main">

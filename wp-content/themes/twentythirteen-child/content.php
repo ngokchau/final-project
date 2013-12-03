@@ -10,11 +10,18 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('col-xs-12 col-sm-6 col-md-4'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	
+	<!-- SINGLE -->
 	<?php if ( is_single() ) : ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-	<?php else : ?>
+		<h5 class="entry-meta">by <?php the_author(); ?> on <?php the_time('F jS, Y') ?></h5>
+		<?php the_post_thumbnail(array(800, 600), array('class'=>'thumbnail')); ?>
 
+	<!-- // SINGLE -->
+
+	<!-- GALLERY -->
+	<?php else : ?>
 		<div class="post-container">
 			<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 				<a href="<?php the_permalink(); ?>">
@@ -30,11 +37,10 @@
 						<div class="date">
 							<strong><?php the_time('F jS, Y') ?></strong>
 						</div>
-					</div>
+					</div><!-- // .post-details -->
 				</a>
 			<?php endif; ?>
-		</div><!-- .post-container -->
-
+		</div><!-- // .post-container -->
 
 		<div class="post-meta">
 			<div class="col-xs-8">
@@ -45,7 +51,11 @@
 				<?php comments_popup_link( '<span class="leave-reply">' . __( '<span class="glyphicon glyphicon-comment"></span>', 'twentythirteen' ) . '</span>', __( '<span class="glyphicon glyphicon-comment"></span>', 'twentythirteen' ), __( 'View all % comments', 'twentythirteen' ) ); ?>
 			</div>
 		</div>
-	<?php endif; // is_single() ?>
+	<?php endif; ?>
+	<!-- // GALLERY -->
+
+
+
 
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary">

@@ -12,6 +12,21 @@
 		padding: 0;
 	}
 
+.nav-thumbnail {
+	border-radius: 85px !important;
+	margin-top: 175%;
+	opacity: 0.5;
+
+	-webkit-transition: 0.2s all linear;
+	-moz-transition: 0.2s all linear;
+	-ms-transition: 0.2s all linear;
+	-o-transition: 0.2s all linear;
+	transition: 0.2s all linear;
+}
+.nav-thumbnail:hover {
+	opacity: 1;
+}
+
 .post-container {
 	overflow: hidden;
 	position: relative;

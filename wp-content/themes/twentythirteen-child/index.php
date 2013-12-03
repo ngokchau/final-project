@@ -15,7 +15,7 @@
  */
 
 get_header(); ?>
-
+<div class="container">
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* The loop */ ?>
@@ -28,6 +28,6 @@ get_header(); ?>
 	<?php else : ?>
 		<?php get_template_part( 'content', 'none' ); ?>
 	<?php endif; ?>
-
+</div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -45,7 +45,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">BOUNCE</a>
+				<a class="navbar-brand" href="index.php">BOUNCE</a>
 			</div>
 
 			<div id="navbar-collapse" class="collapse navbar-collapse">
@@ -74,7 +74,7 @@
 					// Render the menu
 					wp_nav_menu($args);
 
-					// Search form
+					// Search form; Aligned right
 					get_search_form();
 				?>
 			</div>

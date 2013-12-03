@@ -4,7 +4,9 @@ function special_nav_class($classes, $item){
 	if(in_array('current-menu-item', $classes)){ //Notice you can change the conditional from is_single() and $item->title
 		$classes[] = "active";
 	}
-	
+
 	return $classes;
 }
+
+add_theme_support('post-thumbnails');
 ?>

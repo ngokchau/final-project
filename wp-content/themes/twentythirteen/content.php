@@ -9,12 +9,12 @@
  * @since Twenty Thirteen 1.0
  */
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="row">
+<article id="post-<?php the_ID(); ?>" <?php post_class('col-md-4'); ?>>
 	<header class="entry-header">
 		<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 		<div class="entry-thumbnail">
-			<?php the_post_thumbnail(); ?>
+			<?php the_post_thumbnail(array(400, 400)); ?>
 		</div>
 		<?php endif; ?>
 
@@ -26,7 +26,7 @@
 		</h1>
 		<?php endif; // is_single() ?>
 
-		<div class="entry-meta">
+		<div class="entry-meta"><?php the_time('F jS, Y') ?>
 			<?php twentythirteen_entry_meta(); ?>
 			<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
 		</div><!-- .entry-meta -->
@@ -55,3 +55,4 @@
 		<?php endif; ?>
 	</footer><!-- .entry-meta -->
 </article><!-- #post -->
+</div>

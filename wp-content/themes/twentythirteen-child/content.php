@@ -10,27 +10,29 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-		<div class="entry-thumbnail">
-			<?php the_post_thumbnail(array(400, 400)); ?>
-		</div>
-		<?php endif; ?>
-
-		<?php if ( is_single() ) : ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('col-md-4'); ?>>
+	<?php if ( is_single() ) : ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<?php else : ?>
-		<h1 class="entry-title">
-			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-		</h1>
-		<?php endif; // is_single() ?>
+	<?php else : ?>
+
+		<div class="post-container">
+			<!-- .thumbnail -->
+			<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+				<?php the_post_thumbnail(array(400, 300), array('class'=>'thumbnail')); ?>
+			<?php endif; ?>
+			<!-- // .thumbnail -->
+
+			<div class="post-details">
+				<h4><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
+			</div>
+		</div><!-- .post-container -->
+	<?php endif; // is_single() ?>
+		
 
 		<div class="entry-meta"><?php the_time('F jS, Y') ?>
 			<?php twentythirteen_entry_meta(); ?>
 			<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
 		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
 	<div class="entry-summary">

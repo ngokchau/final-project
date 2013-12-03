@@ -10,36 +10,37 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('col-md-4'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('col-xs-12 col-sm-6 col-md-4'); ?>>
 	<?php if ( is_single() ) : ?>
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	<?php else : ?>
 
 		<div class="post-container">
-			<!-- .thumbnail -->
 			<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
-				<?php the_post_thumbnail(array(400, 300), array('class'=>'thumbnail')); ?>
-			<?php endif; ?>
-			<!-- // .thumbnail -->
+				<a href="<?php the_permalink(); ?>">
+					<!-- .thumbnail -->
+						<?php the_post_thumbnail(array(400, 300), array('class'=>'thumbnail')); ?>
+					<!-- // .thumbnail -->
 
-			<a href="<?php the_permalink(); ?>">
-				<div class="post-details">
-					<div class="content">
-						<h4><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
-						<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>
+					<div class="post-details">
+						<div class="content">
+							<h4><a href="<?php the_permalink(); ?>" rel="bookmark"><strong><?php the_title(); ?></strong></a></h4>
+							<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>
+						</div>
+						<div class="date">
+							<strong><?php the_time('F jS, Y') ?></strong>
+						</div>
 					</div>
-					<div class="date">
-						<strong><?php the_time('F jS, Y') ?></strong>
-					</div>
-				</div>
-			</a>
+				</a>
+			<?php endif; ?>
 		</div><!-- .post-container -->
 
+
 		<div class="post-meta">
-			<div class="col-md-9">
+			<div class="col-xs-8">
 				<strong><?php the_author(); ?></strong>
 			</div>
-			<div align="right" class="col-md-3">
+			<div align="right" class="col-xs-4">
 				<?php edit_post_link( __( '<span class="glyphicon glyphicon-edit"></span>', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
 				<?php comments_popup_link( '<span class="leave-reply">' . __( '<span class="glyphicon glyphicon-comment"></span>', 'twentythirteen' ) . '</span>', __( '<span class="glyphicon glyphicon-comment"></span>', 'twentythirteen' ), __( 'View all % comments', 'twentythirteen' ) ); ?>
 			</div>

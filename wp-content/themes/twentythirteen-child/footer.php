@@ -11,7 +11,7 @@
 ?>
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<?php // get_sidebar( 'main' ); ?>
+			<?php get_sidebar( 'secondary' ); ?>
 
 			<!-- <div class="site-info">
 				<?php do_action( 'twentythirteen_credits' ); ?>
@@ -21,5 +21,12 @@
 	</div><!-- #page -->
 
 	<?php wp_footer(); ?>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/vendor/bootstrap.min.js"></script>
+
+	<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/main.js"></script>
 </body>
 </html>

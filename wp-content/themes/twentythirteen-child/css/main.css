@@ -37,7 +37,7 @@
 	}
 
 	.post-details:hover {
-		opacity: 0.8;
+		opacity: 0.85;
 	}
 
 		.content {
@@ -50,7 +50,8 @@
 		}
 
 .post-meta {
-	padding-top: 10px;
+	overflow: hidden;
+	padding: 10px 0 20px 0;
 }
 
 

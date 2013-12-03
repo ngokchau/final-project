@@ -22,15 +22,17 @@
 			<?php endif; ?>
 			<!-- // .thumbnail -->
 
-			<div class="post-details">
-				<div class="content">
-					<h4><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
-					<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>
+			<a href="<?php the_permalink(); ?>">
+				<div class="post-details">
+					<div class="content">
+						<h4><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
+						<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>
+					</div>
+					<div class="date">
+						<strong><?php the_time('F jS, Y') ?></strong>
+					</div>
 				</div>
-				<div class="date">
-					<strong><?php the_time('F jS, Y') ?></strong>
-				</div>
-			</div>
+			</a>
 		</div><!-- .post-container -->
 
 		<div class="post-meta">

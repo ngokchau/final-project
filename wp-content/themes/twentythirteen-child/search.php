@@ -13,7 +13,7 @@ get_header(); ?>
 		<div class="row">
 				<?php if ( have_posts() ) : ?>
 
-					<header class="page-header col-md-12">
+					<header class="col-md-12">
 						<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'twentythirteen' ), get_search_query() ); ?></h1>
 					</header>
 

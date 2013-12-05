@@ -21,9 +21,7 @@ get_header(); ?>
 
 			<?php /* The loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-				<div class="col-xs-12 col-sm-6 col-md-4">
-					<?php get_template_part( 'content', get_post_format() ); ?>
-				</div>
+				<?php get_template_part( 'content', get_post_format() ); ?>
 			<?php endwhile; ?>
 
 			<?php twentythirteen_paging_nav(); ?>

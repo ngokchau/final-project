@@ -12,43 +12,8 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
 		<?php while ( have_posts() ) : the_post(); ?>
-			<!-- NEWER -->
-			<div class="col-md-2 hidden-sm hidden-xs">
-				<?php
-					$nextPost = get_adjacent_post(false, '', false);
-					$nextPostId = $nextPost->ID;
-					$nextPostPermalink = get_permalink($nextPostId);
 
-					if($nextPost) {
-						echo "<a href=\"$nextPostPermalink\">";
-						echo get_the_post_thumbnail($nextPostId, array(150, 150), array('class'=>'thumbnail nav-thumbnail'));
-						echo "</a>";
-					}
-				?>
-			</div>
-			<!-- NEWER -->
-
-			<!-- CURRENT -->
-			<div class="col-md-8">
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			</div>
-			<!-- CURRENT -->
-
-			<!-- OLDER -->
-			<div class="col-md-2 hidden-sm hidden-xs">
-				<?php 
-					$previousPost = get_adjacent_post(true, '', true);
-					$previousPostId = $previousPost->ID;
-					$previousPostPermalink = get_permalink($previousPostId);
-
-					if($previousPost) {
-						echo "<a href=\"$previousPostPermalink\">";
-						echo get_the_post_thumbnail($previousPostId, array(150, 150), array('class'=>'thumbnail nav-thumbnail'));
-						echo "</a>";
-					}
-				?>
-			</div>
-			<!-- OLDER -->
+			<?php get_template_part( 'content', get_post_format() ); ?>
 
 			<div class="col-md-8 col-md-offset-2">
 				<?php comments_template(); ?>

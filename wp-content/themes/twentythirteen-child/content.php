@@ -14,10 +14,13 @@
 	
 	<!-- SINGLE -->
 	<?php if ( is_single() ) : ?>
+		<!-- <h1 class="entry-title"><?php the_title(); ?></h1> -->
+		<!-- <h5 class="entry-meta">by <?php the_author(); ?> on <?php the_time('F jS, Y') ?></h5> -->
+		<?php the_post_thumbnail(array(800, 600), array('class'=>'thumbnail img-thumbnail')); ?>
+		<br />
 		<h1 class="entry-title"><?php the_title(); ?></h1>
-		<h5 class="entry-meta">by <?php the_author(); ?> on <?php the_time('F jS, Y') ?></h5>
-		<?php the_post_thumbnail(array(800, 600), array('class'=>'thumbnail')); ?>
-
+		<h5 class="entry-meta">by <?php the_author(); ?> on <?php the_time('F jS, Y') ?> <?php edit_post_link( __( '<span class="glyphicon glyphicon-edit"></span>', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?></h5>
+		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>	
 	<!-- // SINGLE -->
 
 	<!-- GALLERY -->
@@ -48,7 +51,7 @@
 			</div>
 			<div align="right" class="col-xs-4">
 				<?php edit_post_link( __( '<span class="glyphicon glyphicon-edit"></span>', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
-				<?php comments_popup_link( '<span class="leave-reply">' . __( '<span class="glyphicon glyphicon-comment"></span>', 'twentythirteen' ) . '</span>', __( '<span class="glyphicon glyphicon-comment"></span>', 'twentythirteen' ), __( 'View all % comments', 'twentythirteen' ) ); ?>
+				<?php comments_popup_link( '<span class="leave-reply">' . __( '<span class="glyphicon glyphicon-comment"></span>', 'twentythirteen' ) . '</span>', __( '<span class="glyphicon glyphicon-comment"></span>', 'twentythirteen' ), __( '<span class="glyphicon glyphicon-comment"></span>', 'twentythirteen' ) ); ?>
 			</div>
 		</div>
 	<?php endif; ?>

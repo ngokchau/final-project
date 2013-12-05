@@ -2,6 +2,10 @@
    Author's custom styles
    ========================================================================== */
 
+body {
+	padding: 0 0 50px 0;
+}
+
 .navbar {
 	border: 0px;
 	border-radius: 0px;
@@ -14,7 +18,7 @@
 
 .nav-thumbnail {
 	border-radius: 85px !important;
-	margin-top: 175%;
+	margin-top: 120%;
 	opacity: 0.5;
 
 	-webkit-transition: 0.2s all linear;
@@ -33,10 +37,10 @@
 }
 
 	.thumbnail {
-		border: 0;
+/*		border: 0;
 		border-radius: 0;
 		padding: 0;
-		width: 100%;
+*/		width: 100%;
 	}
 
 	.post-details {

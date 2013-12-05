@@ -15,21 +15,23 @@
  */
 
 get_header(); ?>
+
 <div class="container">
-	<div class="row">
 		<?php if ( have_posts() ) : ?>
 
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
+			<div class="row">
+				<?php /* The loop */ ?>
+				<?php while ( have_posts() ) : the_post(); ?>
+					<?php get_template_part( 'content', get_post_format() ); ?>
+				<?php endwhile; ?>
+			</div>
 
-			<?php twentythirteen_paging_nav(); ?>
-
+			<div class="row">
+				<?php twentythirteen_paging_nav(); ?>
+			</div>
+			
 		<?php else : ?>
 			<?php get_template_part( 'content', 'none' ); ?>
 		<?php endif; ?>
-	</div>
 </div>
-<?php // get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -17,17 +17,36 @@
 get_header(); ?>
 
 <div class="container">
-	<div class="row">
+	<?php echo cptbc_frontend(array('interval'=>'4000')); ?>
+
+	<?php if ( have_posts() ) : ?>
+
+		<div class="row">
+			<?php /* The loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php endwhile; ?>
+		</div>
+
+		<div class="row">
+			<?php twentythirteen_paging_nav(); ?>
+		</div>
+
+	<?php else : ?>
+		<?php get_template_part( 'content', 'none' ); ?>
+	<?php endif; ?>
+</div>
+<?php get_footer(); ?>
+
+	<!-- <div class="row">
 		<div class="col-md-12 hidden-xs">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-				<!-- Indicators -->
 				<ol class="carousel-indicators">
 					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
 				</ol>
 
-				<!-- Wrapper for slides -->
 				<div class="carousel-inner">
 					<div class="item active">
 						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide-audi-r8.jpg" alt="...">
@@ -49,7 +68,6 @@ get_header(); ?>
 					</div>
 				</div>
 
-				<!-- Controls -->
 				<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
 					<span class="glyphicon glyphicon-chevron-left"></span>
 				</a>
@@ -58,23 +76,4 @@ get_header(); ?>
 				</a>
 			</div>
 		</div>
-	</div>
-
-	<?php if ( have_posts() ) : ?>
-
-		<div class="row">
-			<?php /* The loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', get_post_format() ); ?>
-			<?php endwhile; ?>
-		</div>
-
-		<div class="row">
-			<?php twentythirteen_paging_nav(); ?>
-		</div>
-
-	<?php else : ?>
-		<?php get_template_part( 'content', 'none' ); ?>
-	<?php endif; ?>
-</div>
-<?php get_footer(); ?>
+	</div> -->

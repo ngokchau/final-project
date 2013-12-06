@@ -1,9 +1,9 @@
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
 body {
 	padding: 0 0 50px 0;
+}
+
+.btn {
+	border-radius: 5px;
 }
 
 .circle {
@@ -36,6 +36,7 @@ body {
 	border: 0px;
 	border-radius: 0px;
 	max-width: 100%;
+	position: relative;
 }
 
 	#searchform {
@@ -43,6 +44,7 @@ body {
 	}
 
 .nav-thumbnail {
+	border: 10px solid #fff;
 	border-radius: 85px !important;
 	margin-top: 120%;
 	opacity: 0.5;
@@ -54,6 +56,7 @@ body {
 	transition: 0.2s all linear;
 }
 .nav-thumbnail:hover {
+	border: 5px solid #fff;
 	opacity: 1;
 }
 
@@ -63,10 +66,10 @@ body {
 }
 
 	.thumbnail {
-/*		border: 0;
-		border-radius: 0;
-		padding: 0;
-*/		width: 100%;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		padding: 4px;
+		width: 100%;
 	}
 
 	.post-details {
@@ -87,7 +90,7 @@ body {
 		height: 100%;
 	}
 	.post-details:hover {
-		opacity: 0.85;
+		opacity: 0.9;
 	}
 
 		.content {
@@ -97,6 +100,16 @@ body {
 
 			.content a {
 				color: #833;
+
+				-webkit-transition: 0.2s all linear;
+				-moz-transition: 0.2s all linear;
+				-ms-transition: 0.2s all linear;
+				-o-transition: 0.2s all linear;
+				transition: 0.2s all linear;
+			}
+			.content a:hover {
+				color: #f33;
+				text-decoration: none;
 			}
 
 		.date {

@@ -42,7 +42,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.php">BOUNCE</a>
+				<a class="navbar-brand" href="index.php"><?php bloginfo('name'); ?></a>
 			</div>
 
 			<div id="navbar-collapse" class="collapse navbar-collapse">

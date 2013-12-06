@@ -20,6 +20,18 @@ body {
 	float: right;
 }
 
+.carousel {
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	padding: 4px;
+}
+
+.carousel .left,
+.carousel .right {
+	background: transparent;
+}
+
 .navbar {
 	border: 0px;
 	border-radius: 0px;

@@ -17,21 +17,64 @@
 get_header(); ?>
 
 <div class="container">
-		<?php if ( have_posts() ) : ?>
+	<div class="row">
+		<div class="col-md-12">
+			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+					<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+				</ol>
 
-			<div class="row">
-				<?php /* The loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part( 'content', get_post_format() ); ?>
-				<?php endwhile; ?>
-			</div>
+				<!-- Wrapper for slides -->
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="http://placehold.it/1280x500" alt="...">
+						<div class="carousel-caption">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, asperiores, libero, sit, deserunt corporis consectetur molestias debitis totam amet soluta aliquam omnis eveniet dolorem numquam possimus deleniti pariatur porro perspiciatis.
+						</div>
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/1280x500" alt="...">
+						<div class="carousel-caption">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, asperiores, libero, sit, deserunt corporis consectetur molestias debitis totam amet soluta aliquam omnis eveniet dolorem numquam possimus deleniti pariatur porro perspiciatis.
+						</div>
+					</div>
+					<div class="item">
+						<img src="http://placehold.it/1280x500" alt="...">
+						<div class="carousel-caption">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, asperiores, libero, sit, deserunt corporis consectetur molestias debitis totam amet soluta aliquam omnis eveniet dolorem numquam possimus deleniti pariatur porro perspiciatis.
+						</div>
+					</div>
+				</div>
 
-			<div class="row">
-				<?php twentythirteen_paging_nav(); ?>
+				<!-- Controls -->
+				<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+				</a>
+				<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+				</a>
 			</div>
-			
-		<?php else : ?>
-			<?php get_template_part( 'content', 'none' ); ?>
-		<?php endif; ?>
+		</div>
+	</div>
+
+	<?php if ( have_posts() ) : ?>
+
+		<div class="row">
+			<?php /* The loop */ ?>
+			<?php while ( have_posts() ) : the_post(); ?>
+				<?php get_template_part( 'content', get_post_format() ); ?>
+			<?php endwhile; ?>
+		</div>
+
+		<div class="row">
+			<?php twentythirteen_paging_nav(); ?>
+		</div>
+
+	<?php else : ?>
+		<?php get_template_part( 'content', 'none' ); ?>
+	<?php endif; ?>
 </div>
 <?php get_footer(); ?>

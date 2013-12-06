@@ -24,9 +24,9 @@
 				$previousPostId = $previousPost->ID;
 				$previousPostPermalink = get_permalink($previousPostId);
 
-				if($nextPost) {
-					echo "<a href=\"$nextPostPermalink\">";
-					echo get_the_post_thumbnail($nextPostId, array(150, 150), array('class'=>'thumbnail nav-thumbnail'));
+				if($previousPost) {
+					echo "<a href=\"$previousPostPermalink\">";
+					echo get_the_post_thumbnail($previousPostId, array(150, 150), array('class'=>'thumbnail nav-thumbnail'));
 					echo "</a>";
 				}
 			?>
@@ -36,25 +36,28 @@
 		<!-- CURRENT -->
 		<div class="col-md-8">
 			<?php the_post_thumbnail(array(800, 600), array('class'=>'thumbnail img-thumbnail')); ?>
+			<ul class="pager visible-sm visible-xs">
+				<?php if($previousPost) : ?>
+					<li class="next"><a href="<?php echo $previousPostPermalink; ?>">&larr; Older</a></li>
+				<?php endif; ?>
 
-			<br />
+				<?php if($nextPost) : ?>
+					<li class="previous"><a href="<?php echo $nextPostPermalink; ?>">Newer &rarr;</a></li>
+				<?php endif; ?>
+			</ul>
+
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<h5 class="entry-meta">by <?php the_author(); ?> on <?php the_time('F jS, Y') ?> <?php edit_post_link( __( '<span class="glyphicon glyphicon-edit"></span>', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?></h5>
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>
-			<ul class="pager visible-sm visible-xs">
-				<li class="previous" style="float: left;"><a href="<?php echo $nextPostPermalink; ?>">&larr; Older</a></li>
-				<li class="next" style="float: right;"><a href="<?php echo $previousPostPermalink; ?>">Newer &rarr;</a></li>
-			</ul>
-
 		</div>
 		<!-- CURRENT -->
 
 		<!-- OLDER -->
 		<div class="col-md-2 hidden-sm hidden-xs">
 			<?php 
-				if($previousPost) {
-					echo "<a href=\"$previousPostPermalink\">";
-					echo get_the_post_thumbnail($previousPostId, array(150, 150), array('class'=>'thumbnail nav-thumbnail'));
+				if($nextPost) {
+					echo "<a href=\"$nextPostPermalink\">";
+					echo get_the_post_thumbnail($nextPostId, array(150, 150), array('class'=>'thumbnail nav-thumbnail'));
 					echo "</a>";
 				}
 			?>

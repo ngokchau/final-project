@@ -20,6 +20,9 @@
 				$nextPost = get_adjacent_post(false, '', false);
 				$nextPostId = $nextPost->ID;
 				$nextPostPermalink = get_permalink($nextPostId);
+				$previousPost = get_adjacent_post(true, '', true);
+				$previousPostId = $previousPost->ID;
+				$previousPostPermalink = get_permalink($previousPostId);
 
 				if($nextPost) {
 					echo "<a href=\"$nextPostPermalink\">";
@@ -33,20 +36,22 @@
 		<!-- CURRENT -->
 		<div class="col-md-8">
 			<?php the_post_thumbnail(array(800, 600), array('class'=>'thumbnail img-thumbnail')); ?>
+
 			<br />
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 			<h5 class="entry-meta">by <?php the_author(); ?> on <?php the_time('F jS, Y') ?> <?php edit_post_link( __( '<span class="glyphicon glyphicon-edit"></span>', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?></h5>
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>
+			<ul class="pager visible-sm visible-xs">
+				<li class="previous" style="float: left;"><a href="<?php echo $nextPostPermalink; ?>">&larr; Older</a></li>
+				<li class="next" style="float: right;"><a href="<?php echo $previousPostPermalink; ?>">Newer &rarr;</a></li>
+			</ul>
+
 		</div>
 		<!-- CURRENT -->
 
 		<!-- OLDER -->
 		<div class="col-md-2 hidden-sm hidden-xs">
 			<?php 
-				$previousPost = get_adjacent_post(true, '', true);
-				$previousPostId = $previousPost->ID;
-				$previousPostPermalink = get_permalink($previousPostId);
-
 				if($previousPost) {
 					echo "<a href=\"$previousPostPermalink\">";
 					echo get_the_post_thumbnail($previousPostId, array(150, 150), array('class'=>'thumbnail nav-thumbnail'));

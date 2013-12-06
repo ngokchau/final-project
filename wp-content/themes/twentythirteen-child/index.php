@@ -18,7 +18,7 @@ get_header(); ?>
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-12 hidden-xs">
 			<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
@@ -30,19 +30,19 @@ get_header(); ?>
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner">
 					<div class="item active">
-						<img src="http://placehold.it/1280x500" alt="...">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide-audi-r8.jpg" alt="...">
 						<div class="carousel-caption">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, asperiores, libero, sit, deserunt corporis consectetur molestias debitis totam amet soluta aliquam omnis eveniet dolorem numquam possimus deleniti pariatur porro perspiciatis.
 						</div>
 					</div>
 					<div class="item">
-						<img src="http://placehold.it/1280x500" alt="...">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide-audi-xq.jpg" alt="...">
 						<div class="carousel-caption">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, asperiores, libero, sit, deserunt corporis consectetur molestias debitis totam amet soluta aliquam omnis eveniet dolorem numquam possimus deleniti pariatur porro perspiciatis.
 						</div>
 					</div>
 					<div class="item">
-						<img src="http://placehold.it/1280x500" alt="...">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/slide-porsche.jpg" alt="...">
 						<div class="carousel-caption">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, asperiores, libero, sit, deserunt corporis consectetur molestias debitis totam amet soluta aliquam omnis eveniet dolorem numquam possimus deleniti pariatur porro perspiciatis.
 						</div>
